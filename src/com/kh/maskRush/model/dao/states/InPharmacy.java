@@ -8,6 +8,8 @@ public class InPharmacy extends Npc{
 
 	public InPharmacy(Image chatWindow) {
 		super(chatWindow);
+		
+		
 	}
 	
 	
