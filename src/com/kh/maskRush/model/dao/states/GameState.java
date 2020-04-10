@@ -17,7 +17,7 @@ public class GameState extends State {
 		handler.setWorld(world);
 		boyPlayer = new BoyPlayer(handler, 100, 100);
 		
-		game.getGameCamera().move(0, 0);
+		handler.getGameCamera().move(0, 0);
 	}
 	
 	@Override
