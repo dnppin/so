@@ -48,7 +48,7 @@ public class Game implements Runnable {
 
 	}
 
-	
+	//Å×½ºÆ®
 	private void init() {
 		display = new Display(title, width, height);
 		display.getFrame().addKeyListener(keyManager);
