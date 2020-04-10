@@ -3,6 +3,7 @@ package com.kh.maskRush.model.dao.states;
 import java.awt.Graphics;
 
 import com.kh.maskRush.controller.Game;
+import com.kh.maskRush.model.dao.handler.Handler;
 
 //create State so that classes share things in common
 public abstract class State {
@@ -19,10 +20,12 @@ public abstract class State {
 	
 	//CLASS
 	
+	protected Handler handler;
+	
 	protected Game game;
 	
-	public State(Game game) {
-		this.game = game;
+	public State(Handler handler) {
+		this.handler = handler;
 	}
 	
 	public abstract void tick();

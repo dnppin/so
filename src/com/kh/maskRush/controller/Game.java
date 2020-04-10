@@ -5,6 +5,7 @@ import java.awt.image.BufferStrategy;
 
 import com.kh.maskRush.model.dao.gfx.Assets;
 import com.kh.maskRush.model.dao.gfx.GameCamera;
+import com.kh.maskRush.model.dao.handler.Handler;
 import com.kh.maskRush.model.dao.input.KeyManager;
 import com.kh.maskRush.model.dao.states.GameState;
 import com.kh.maskRush.model.dao.states.MainMenuState;
@@ -35,7 +36,10 @@ public class Game implements Runnable {
 	//Camera
 	private GameCamera gameCamera;
 	
-		
+	//Handler
+	private Handler handler;
+	
+	
 	public Game(String title, int width, int height) {
 		this.width = width;
 		this.height = height;
@@ -51,9 +55,10 @@ public class Game implements Runnable {
 		Assets.init();
 		
 		gameCamera = new GameCamera(this, 0, 0); 
+		handler = new Handler(this);
 		
-		gameState = new GameState(this);
-		mainMenuState = new MainMenuState(this);
+		gameState = new GameState(handler);
+		mainMenuState = new MainMenuState(handler);
 		State.setState(gameState);
 	}
 	
